@@ -40,8 +40,8 @@ export const virtuesData: Virtue[] = [
     id: "v-obedience",
     name: "Obedience",
     description: "Willingly submitting to the authority and teachings of the Pope and the Magisterium of the Catholic Church, even when it costs you.",
-    daily_practice: "Read a recent papal teaching or encyclical today. Reflect on what it asks of you.",
-    reflection_question: "Where am I resisting the authority of the Holy See?",
+    daily_practice: "Follow through on something you know you should do, even if you don't feel like it.",
+    reflection_question: "Where am I resisting what I know is right?",
   },
   {
     id: "v-meekness",
