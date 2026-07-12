@@ -68,7 +68,7 @@ export function getTodayVirtues(
     return hashA - hashB;
   });
 
-  return shuffled.slice(0, Math.min(6, shuffled.length));
+  return shuffled;
 }
 
 export function getPrimaryVirtue(
