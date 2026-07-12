@@ -175,27 +175,6 @@ export const defaultWeaknesses: WeaknessTemplate[] = [
     related_weaknesses: ["Self-Reliance", "Defensiveness", "Wanting to Be Right"],
   },
   {
-    title: "Obedience to the Holy See",
-    description: "Resistance to accepting the authority and teachings of the Pope and the Magisterium of the Catholic Church.",
-    severity: 3,
-    mapped_virtue: "v-obedience",
-    category: "Pride & Ego",
-    symptoms: [
-      "Cherry-picking which Church teachings to follow",
-      "Questioning papal authority out of pride rather than genuine inquiry",
-      "Prioritizing personal opinion over Church doctrine",
-      "Resisting obedience to legitimate ecclesiastical superiors",
-    ],
-    reflection_questions: [
-      "Do I submit to Church authority only when it aligns with my preferences?",
-      "What would radical obedience to the Holy See look like in my life?",
-    ],
-    practice: "Read a recent papal teaching or encyclical today. Reflect on what it asks of you.",
-    scripture: "Luke 10:16 — Whoever listens to you listens to me; whoever rejects you rejects me.",
-    saints_wisdom: "St. Ignatius of Loyola: 'It is not much knowledge that fills and satisfies the soul, but the intimate understanding and thorough knowledge of the little things.'",
-    related_weaknesses: ["Obstinacy", "Pride", "Self-Reliance"],
-  },
-  {
     title: "Defensiveness",
     description: "Reacting to criticism or correction with hostility, excuses, or counter-attacks.",
     severity: 3,
