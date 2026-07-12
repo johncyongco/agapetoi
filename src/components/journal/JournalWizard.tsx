@@ -26,10 +26,10 @@ export function JournalWizard({ onClose }: JournalWizardProps) {
 
   const { weaknesses } = useWeaknessesStore();
   const { addEntry } = useJournalStore();
-  const { customMappings } = useVirtuesStore();
+  const { customMappings, focusId } = useVirtuesStore();
 
   const activeWeaknesses = weaknesses.filter((w) => w.status !== "archived");
-  const todayVirtues = getTodayVirtues(activeWeaknesses, customMappings);
+  const todayVirtues = getTodayVirtues(activeWeaknesses, customMappings, focusId);
 
   const currentIndex = steps.indexOf(currentStep);
 

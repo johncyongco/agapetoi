@@ -19,11 +19,11 @@ export default function HomePage() {
 
   const { weaknesses } = useWeaknessesStore();
   const { entries } = useJournalStore();
-  const { customMappings } = useVirtuesStore();
+  const { customMappings, focusId } = useVirtuesStore();
   const { settings } = useUIStore();
 
   const activeWeaknesses = weaknesses.filter((w) => w.status !== "archived");
-  const todayVirtues = getTodayVirtues(activeWeaknesses, customMappings);
+  const todayVirtues = getTodayVirtues(activeWeaknesses, customMappings, focusId);
   const primaryVirtue = todayVirtues[0] || null;
   const journalCount = entries.length;
 

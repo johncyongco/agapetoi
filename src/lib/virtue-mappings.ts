@@ -27,7 +27,8 @@ export function getVirtuesByIds(ids: string[]): Virtue[] {
 
 export function getTodayVirtues(
   activeWeaknesses: Weakness[],
-  customMappings?: Record<string, string[]>
+  customMappings?: Record<string, string[]>,
+  focusId?: string | null
 ): VirtueWithMapping[] {
   const today = new Date().toISOString().split("T")[0];
   const seed = hashDate(today);
@@ -68,13 +69,22 @@ export function getTodayVirtues(
     return hashA - hashB;
   });
 
+  if (focusId) {
+    const focused = shuffled.find((v) => v.id === focusId);
+    const rest = shuffled.filter((v) => v.id !== focusId);
+    if (focused) {
+      return [focused, ...rest];
+    }
+  }
+
   return shuffled;
 }
 
 export function getPrimaryVirtue(
   activeWeaknesses: Weakness[],
-  customMappings?: Record<string, string[]>
+  customMappings?: Record<string, string[]>,
+  focusId?: string | null
 ): VirtueWithMapping | null {
-  const virtues = getTodayVirtues(activeWeaknesses, customMappings);
+  const virtues = getTodayVirtues(activeWeaknesses, customMappings, focusId);
   return virtues[0] || null;
 }

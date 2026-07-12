@@ -19,10 +19,10 @@ export function JournalEditForm({ entry, onClose }: JournalEditFormProps) {
 
   const { weaknesses } = useWeaknessesStore();
   const { updateEntry } = useJournalStore();
-  const { customMappings } = useVirtuesStore();
+  const { customMappings, focusId } = useVirtuesStore();
 
   const activeWeaknesses = weaknesses.filter((w) => w.status !== "archived");
-  const todayVirtues = getTodayVirtues(activeWeaknesses, customMappings);
+  const todayVirtues = getTodayVirtues(activeWeaknesses, customMappings, focusId);
 
   const toggleWeakness = (id: string) => {
     setSelectedWeaknessIds((prev) =>

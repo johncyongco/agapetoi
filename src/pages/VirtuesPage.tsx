@@ -13,7 +13,7 @@ export default function VirtuesPage() {
   const { focusId, setFocus, customMappings } = useVirtuesStore();
 
   const activeWeaknesses = weaknesses.filter((w) => w.status !== "archived");
-  const todayVirtues = getTodayVirtues(activeWeaknesses, customMappings);
+  const todayVirtues = getTodayVirtues(activeWeaknesses, customMappings, focusId);
 
   return (
     <div className="min-h-screen bg-bg">
