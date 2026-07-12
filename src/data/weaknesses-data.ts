@@ -1406,21 +1406,21 @@ export function getTodayKey(): string {
 
 export function getEncouragingQuote(): string {
   const quotes = [
-    "Know yourself, and you will know God.",
-    "The unexamined life is not worth living.",
-    "Self-knowledge is the beginning of wisdom.",
-    "He who knows others is wise; he who knows himself is enlightened.",
-    "Knowing yourself is the beginning of all wisdom.",
-    "Your greatest strength is knowing your greatest weakness.",
-    "Be still, and know.",
-    "The soul that sees beauty may sometimes walk alone.",
-    "What you are is what you have been. What you'll be is what you do now.",
-    "To know oneself is to be humble.",
-    "Growth begins at the edge of comfort.",
-    "Every weakness is a doorway to virtue.",
-    "The first step toward change is awareness.",
-    "What we observe is not nature itself, but nature exposed to our method of questioning.",
-    "Attention is the rarest and purest form of generosity.",
+    "The glory of God is a human being fully alive. — St. Irenaeus",
+    "God calls you to be a saint. — St. Josemaría Escrivá",
+    "Pray, hope, and don't worry. — St. Padre Pio",
+    "Let nothing trouble you, let nothing frighten you. All things are passing; God never changes. — St. Teresa of Avila",
+    "Be who God meant you to be and you will set the world on fire. — St. Catherine of Siena",
+    "If God can work through me, He can work through anyone. — St. Francis of Assisi",
+    "All shall be well, and all shall be well, and all manner of thing shall be well. — St. Julian of Norwich",
+    "You are not a human being having a spiritual experience. You are a spiritual being having a human experience. — St. Teresa of Ávila",
+    "The soul that sees beauty may sometimes walk alone. — St. John of the Cross",
+    "God does not require that we succeed, only that we try. — St. Maximilian Kolbe",
+    "Act in such a way that all who see you may remember God. — St. Teresa of Calcutta",
+    "The best way to find yourself is to lose yourself in the service of others. — St. Teresa of Calcutta",
+    "Do not be afraid. Be not afraid. — Blessed Pope John XXIII",
+    "The world offers you comfort. But you were not made for comfort. You were made for greatness. — Pope Benedict XVI",
+    "Faith is a relationship between God and man. It is not just belief. — St. Thomas Aquinas",
   ];
   const dayOfYear = Math.floor(
     (Date.now() - new Date(new Date().getFullYear(), 0, 0).getTime()) / 86400000
