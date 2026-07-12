@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
+import { Plus } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { JournalWizard } from "@/components/journal/JournalWizard";
 import { JournalEditForm } from "@/components/journal/JournalEditForm";
@@ -19,11 +21,23 @@ export default function JournalPage() {
       <Header title="Journal" />
 
       <main className="max-w-2xl mx-auto px-5 lg:px-0 py-10 pb-24 lg:pb-12">
-        <div className="mb-2">
-          <h1 className="text-editorial-5xl text-text mb-2">Journal</h1>
-          <p className="text-editorial-sm text-text-secondary">
-            Brief daily reflections.
-          </p>
+        <div className="flex items-end justify-between gap-4 mb-2">
+          <div>
+            <h1 className="text-editorial-5xl text-text mb-2">Journal</h1>
+            <p className="text-editorial-sm text-text-secondary">
+              Brief daily reflections.
+            </p>
+          </div>
+          {entries.length > 0 && (
+            <motion.button
+              whileTap={{ scale: 0.97 }}
+              onClick={() => setWizardOpen(true)}
+              className="btn-primary shrink-0"
+            >
+              <Plus size={14} strokeWidth={1.5} />
+              New Entry
+            </motion.button>
+          )}
         </div>
 
         <hr className="editorial-rule-thick my-6" />
