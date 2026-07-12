@@ -69,7 +69,15 @@ export function VirtueCard({
         </div>
 
         <p className="text-editorial-sm text-text-secondary leading-relaxed mb-3">
+          {virtue.description}
+        </p>
+
+        <p className="text-editorial-sm text-text-secondary leading-relaxed mb-3">
           {virtue.daily_practice}
+        </p>
+
+        <p className="text-editorial-sm text-text-secondary leading-relaxed mb-3">
+          {virtue.reflection_question}
         </p>
 
         {virtue.mapped_from.length > 0 && (
