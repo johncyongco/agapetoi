@@ -16,7 +16,7 @@ export function BottomNav() {
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 z-40 bg-paper/90 backdrop-blur-xl border-t border-border">
-      <div className="flex items-center justify-around max-w-lg mx-auto h-16 px-1">
+      <div className="flex items-center justify-around max-w-lg mx-auto h-[70px] px-1">
         {navItems.map((item) => {
           const isActive = location.pathname === item.to;
           const Icon = item.icon;
@@ -24,17 +24,17 @@ export function BottomNav() {
             <NavLink
               key={item.to}
               to={item.to}
-              className="relative flex flex-col items-center gap-0.5 py-1.5 min-w-[48px]"
+              className="relative flex flex-col items-center gap-0.5 py-1.5 min-w-[53px]"
             >
               <Icon
-                size={20}
+                size={22}
                 strokeWidth={2.2}
                 className={`transition-colors duration-200 ${
                   isActive ? "text-text" : "text-text-secondary"
                 }`}
               />
               <span
-                className={`text-[10px] tracking-tight transition-colors duration-200 ${
+                className={`text-[11px] tracking-tight transition-colors duration-200 ${
                   isActive ? "text-text" : "text-text-secondary"
                 }`}
               >
