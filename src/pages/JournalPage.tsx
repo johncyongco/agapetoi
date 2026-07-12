@@ -28,16 +28,14 @@ export default function JournalPage() {
               Brief daily reflections.
             </p>
           </div>
-          {entries.length > 0 && (
-            <motion.button
-              whileTap={{ scale: 0.97 }}
-              onClick={() => setWizardOpen(true)}
-              className="btn-primary shrink-0"
-            >
-              <Plus size={14} strokeWidth={1.5} />
-              New Entry
-            </motion.button>
-          )}
+          <motion.button
+            whileTap={{ scale: 0.97 }}
+            onClick={() => setWizardOpen(true)}
+            className="btn-primary shrink-0"
+          >
+            <Plus size={14} strokeWidth={1.5} />
+            New Entry
+          </motion.button>
         </div>
 
         <hr className="editorial-rule-thick my-6" />
