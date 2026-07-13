@@ -1412,15 +1412,14 @@ export function getEncouragingQuote(): string {
     "Let nothing disturb you, let nothing frighten you. All things are passing away; God does not change. Patience obtains all things. — St. Teresa of Avila",
     "If you are what you ought to be, you will set fire to all Italy. — St. Catherine of Siena",
     "All shall be well, and all shall be well, and all manner of thing shall be well. — St. Julian of Norwich",
-    "The soul that sees beauty may sometimes walk alone. — St. John of the Cross",
+    "In the evening of life, we will be judged on love alone. — St. John of the Cross",
     "God does not require that we succeed, only that we are faithful. — St. Teresa of Calcutta",
     "Be not afraid! Open wide the doors for Christ! — Pope St. John Paul II",
     "We were not created for an easy life, but for great things, for goodness. — Pope Benedict XVI",
     "Faith is a habit of the mind, whereby eternal life is begun in us, making the intellect assent to what is non-apparent. — St. Thomas Aquinas",
     "The first step toward humility is the knowledge of ourselves. — St. Teresa of Avila",
     "To serve God is to reign. — St. Josemaría Escrivá",
-    "In the evening of life, we will be judged on love alone. — St. John of the Cross",
-    "Whoever has God lacks nothing. God alone is enough. — St. Teresa of Avila",
+    "Where God is, there is no fear. — St. Thérèse of Lisieux",
   ];
   const dayOfYear = Math.floor(
     (Date.now() - new Date(new Date().getFullYear(), 0, 0).getTime()) / 86400000
