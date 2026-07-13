@@ -1419,7 +1419,7 @@ export function getEncouragingQuote(): string {
     "Faith is a habit of the mind, whereby eternal life is begun in us, making the intellect assent to what is non-apparent. — St. Thomas Aquinas",
     "The first step toward humility is the knowledge of ourselves. — St. Teresa of Avila",
     "Don't forget that a saint is a sinner who keeps trying. — St. Josemaría Escrivá",
-    "Where God is, there is no fear. — St. Thérèse of Lisieux",
+    "If a kind thought of Jesus stirs in your heart, follow that first impulse. — St. Thérèse of Lisieux",
   ];
   const dayOfYear = Math.floor(
     (Date.now() - new Date(new Date().getFullYear(), 0, 0).getTime()) / 86400000
