@@ -1406,20 +1406,20 @@ export function getTodayKey(): string {
 
 export function getEncouragingQuote(): string {
   const quotes = [
-    "The glory of God is man fully alive; moreover, man's life is the vision of God. — St. Irenaeus",
-    "God calls us all to be saints. — St. Josemaría Escrivá",
-    "Pray, hope, and don't worry. Worry is useless. God is merciful and will hear your prayer. — St. Padre Pio",
-    "Let nothing disturb you, let nothing frighten you. All things are passing away; God never changes. Patience obtains all things. Whoever has God lacks nothing; God alone suffices. — St. Teresa of Ávila",
-    "Nothing great is ever achieved without much enduring. — St. Catherine of Siena",
-    "All shall be well, and all shall be well, and all manner of thing shall be well. — St. Julian of Norwich",
-    "At the evening of life, we shall be judged on love. — St. John of the Cross",
-    "Not all of us can do great things. But we can do small things with great love. — St. Teresa of Calcutta",
-    "Be not afraid! Open wide the doors for Christ! — Pope St. John Paul II",
-    "You were not made for comfort, but for greatness. — Pope Benedict XVI",
-    "Faith is a habit of the mind whereby eternal life is begun in us, making the intellect assent to what is non-apparent. — St. Thomas Aquinas",
-    "Humility is walking in truth. — St. Teresa of Ávila",
-    "Your duty is to become a saint. — St. Josemaría Escrivá",
-    "Do not drag your feet any longer. Follow the first impulse. That is where your place is. — St. Thérèse of Lisieux",
+    '"The glory of God is man fully alive; moreover, man\'s life is the vision of God." — St. Irenaeus',
+    '"God calls us all to be saints." — St. Josemaría Escrivá',
+    '"Pray, hope, and don\'t worry. Worry is useless. God is merciful and will hear your prayer." — St. Padre Pio',
+    '"Let nothing disturb you, let nothing frighten you. All things are passing away; God never changes. Patience obtains all things. Whoever has God lacks nothing; God alone suffices." — St. Teresa of Ávila',
+    '"Nothing great is ever achieved without much enduring." — St. Catherine of Siena',
+    '"All shall be well, and all shall be well, and all manner of thing shall be well." — St. Julian of Norwich',
+    '"At the evening of life, we shall be judged on love." — St. John of the Cross',
+    '"Not all of us can do great things. But we can do small things with great love." — St. Teresa of Calcutta',
+    '"Be not afraid! Open wide the doors for Christ!" — Pope St. John Paul II',
+    '"You were not made for comfort, but for greatness." — Pope Benedict XVI',
+    '"Faith is a habit of the mind whereby eternal life is begun in us, making the intellect assent to what is non-apparent." — St. Thomas Aquinas',
+    '"Humility is walking in truth." — St. Teresa of Ávila',
+    '"Your duty is to become a saint." — St. Josemaría Escrivá',
+    '"Do not drag your feet any longer. Follow the first impulse. That is where your place is." — St. Thérèse of Lisieux',
   ];
   const dayOfYear = Math.floor(
     (Date.now() - new Date(new Date().getFullYear(), 0, 0).getTime()) / 86400000
