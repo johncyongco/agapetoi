@@ -56,7 +56,7 @@ export function TodayFocus({
       <hr className="editorial-rule mb-8" />
 
       <p className="text-editorial-sm text-text-secondary italic leading-relaxed max-w-md">
-        "{getEncouragingQuote()}"
+        {getEncouragingQuote()}
       </p>
 
       {onContinueReflection && (
