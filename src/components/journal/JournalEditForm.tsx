@@ -24,18 +24,6 @@ export function JournalEditForm({ entry, onClose }: JournalEditFormProps) {
   const activeWeaknesses = weaknesses.filter((w) => w.status !== "archived");
   const todayVirtues = getTodayVirtues(activeWeaknesses, customMappings, focusId);
 
-  const toggleWeakness = (id: string) => {
-    setSelectedWeaknessIds((prev) =>
-      prev.includes(id) ? prev.filter((wId) => wId !== id) : [...prev, id]
-    );
-  };
-
-  const toggleVirtue = (id: string) => {
-    setSelectedVirtueIds((prev) =>
-      prev.includes(id) ? prev.filter((vId) => vId !== id) : [...prev, id]
-    );
-  };
-
   const handleSave = () => {
     updateEntry(entry.id, {
       reflection,
@@ -64,54 +52,56 @@ export function JournalEditForm({ entry, onClose }: JournalEditFormProps) {
         {activeWeaknesses.length === 0 ? (
           <p className="text-editorial-xs text-text-secondary italic">No weaknesses added.</p>
         ) : (
-          <div className="space-y-0">
-            {activeWeaknesses.map((w) => (
-              <button
-                key={w.id}
-                onClick={() => toggleWeakness(w.id)}
-                className="w-full flex items-center gap-3 py-2 border-b border-border text-left transition-colors hover:bg-paper"
-              >
-                <div
-                  className={`w-3 h-3 border transition-colors flex items-center justify-center ${
-                    selectedWeaknessIds.includes(w.id)
-                      ? "bg-text border-text"
-                      : "border-border"
-                  }`}
-                >
-                  {selectedWeaknessIds.includes(w.id) && (
-                    <span className="text-white text-[8px]">✓</span>
-                  )}
-                </div>
-                <span className="text-editorial-sm text-text">{w.title}</span>
-              </button>
-            ))}
+          <div>
+            <p className="text-editorial-xs text-text-secondary mb-2">
+              {selectedWeaknessIds.length} selected
+            </p>
+            <select
+              multiple
+              value={selectedWeaknessIds}
+              onChange={(e) => {
+                const values = Array.from(e.target.selectedOptions, (opt) => opt.value);
+                setSelectedWeaknessIds(values);
+              }}
+              className="w-full min-h-[140px] border border-border bg-bg text-text text-editorial-sm p-3 focus:outline-none focus:border-text"
+            >
+              {activeWeaknesses.map((w) => (
+                <option key={w.id} value={w.id}>
+                  {w.title}
+                </option>
+              ))}
+            </select>
+            <p className="text-editorial-xs text-text-secondary mt-2 italic">
+              Hold Ctrl/Cmd to select multiple
+            </p>
           </div>
         )}
       </div>
 
       <div>
         <label className="label-caps block mb-1.5">Virtues practiced</label>
-        <div className="space-y-0">
-          {todayVirtues.map((v) => (
-            <button
-              key={v.id}
-              onClick={() => toggleVirtue(v.id)}
-              className="w-full flex items-center gap-3 py-2 border-b border-border text-left transition-colors hover:bg-paper"
-            >
-              <div
-                className={`w-3 h-3 border transition-colors flex items-center justify-center ${
-                  selectedVirtueIds.includes(v.id)
-                    ? "bg-text border-text"
-                    : "border-border"
-                }`}
-              >
-                {selectedVirtueIds.includes(v.id) && (
-                  <span className="text-white text-[8px]">✓</span>
-                )}
-              </div>
-              <span className="text-editorial-sm text-text">{v.name}</span>
-            </button>
-          ))}
+        <div>
+          <p className="text-editorial-xs text-text-secondary mb-2">
+            {selectedVirtueIds.length} selected
+          </p>
+          <select
+            multiple
+            value={selectedVirtueIds}
+            onChange={(e) => {
+              const values = Array.from(e.target.selectedOptions, (opt) => opt.value);
+              setSelectedVirtueIds(values);
+            }}
+            className="w-full min-h-[140px] border border-border bg-bg text-text text-editorial-sm p-3 focus:outline-none focus:border-text"
+          >
+            {todayVirtues.map((v) => (
+              <option key={v.id} value={v.id}>
+                {v.name}
+              </option>
+            ))}
+          </select>
+          <p className="text-editorial-xs text-text-secondary mt-2 italic">
+            Hold Ctrl/Cmd to select multiple
+          </p>
         </div>
       </div>
 
