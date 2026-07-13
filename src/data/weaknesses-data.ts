@@ -1406,21 +1406,21 @@ export function getTodayKey(): string {
 
 export function getEncouragingQuote(): string {
   const quotes = [
-    "The glory of God is a human being fully alive. — St. Irenaeus",
+    "The glory of God is a living man, and the life of man is the vision of God. — St. Irenaeus",
     "God calls you to be a saint. — St. Josemaría Escrivá",
-    "Pray, hope, and don't worry. — St. Padre Pio",
-    "Let nothing trouble you, let nothing frighten you. All things are passing; God never changes. — St. Teresa of Avila",
-    "Be who God meant you to be and you will set the world on fire. — St. Catherine of Siena",
-    "If God can work through me, He can work through anyone. — St. Francis of Assisi",
+    "Pray, hope, and don't worry. Worry is useless. God is merciful and will hear your prayer. — St. Padre Pio",
+    "Let nothing disturb you, let nothing frighten you. All things are passing away; God does not change. Patience obtains all things. — St. Teresa of Avila",
+    "If you are what you ought to be, you will set fire to all Italy. — St. Catherine of Siena",
     "All shall be well, and all shall be well, and all manner of thing shall be well. — St. Julian of Norwich",
-    "You are not a human being having a spiritual experience. You are a spiritual being having a human experience. — St. Teresa of Ávila",
     "The soul that sees beauty may sometimes walk alone. — St. John of the Cross",
-    "God does not require that we succeed, only that we try. — St. Maximilian Kolbe",
-    "Act in such a way that all who see you may remember God. — St. Teresa of Calcutta",
-    "The best way to find yourself is to lose yourself in the service of others. — St. Teresa of Calcutta",
-    "Do not be afraid. Be not afraid. — Blessed Pope John XXIII",
-    "The world offers you comfort. But you were not made for comfort. You were made for greatness. — Pope Benedict XVI",
-    "Faith is a relationship between God and man. It is not just belief. — St. Thomas Aquinas",
+    "God does not require that we succeed, only that we are faithful. — St. Teresa of Calcutta",
+    "Be not afraid! Open wide the doors for Christ! — Pope St. John Paul II",
+    "We were not created for an easy life, but for great things, for goodness. — Pope Benedict XVI",
+    "Faith is a habit of the mind, whereby eternal life is begun in us, making the intellect assent to what is non-apparent. — St. Thomas Aquinas",
+    "The first step toward humility is the knowledge of ourselves. — St. Teresa of Avila",
+    "To serve God is to reign. — St. Josemaría Escrivá",
+    "In the evening of life, we will be judged on love alone. — St. John of the Cross",
+    "Whoever has God lacks nothing. God alone is enough. — St. Teresa of Avila",
   ];
   const dayOfYear = Math.floor(
     (Date.now() - new Date(new Date().getFullYear(), 0, 0).getTime()) / 86400000
