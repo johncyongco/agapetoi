@@ -1418,7 +1418,7 @@ export function getEncouragingQuote(): string {
     "We were not created for an easy life, but for great things, for goodness. — Pope Benedict XVI",
     "Faith is a habit of the mind, whereby eternal life is begun in us, making the intellect assent to what is non-apparent. — St. Thomas Aquinas",
     "The first step toward humility is the knowledge of ourselves. — St. Teresa of Avila",
-    "To serve God is to reign. — St. Josemaría Escrivá",
+    "Don't forget that a saint is a sinner who keeps trying. — St. Josemaría Escrivá",
     "Where God is, there is no fear. — St. Thérèse of Lisieux",
   ];
   const dayOfYear = Math.floor(
