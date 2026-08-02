@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { TodayFocus } from "@/components/home/TodayFocus";
 import { StatsCard } from "@/components/home/StatsCard";
@@ -12,25 +12,21 @@ import { useJournalStore } from "@/stores/journal-store";
 import { useVirtuesStore } from "@/stores/virtues-store";
 import { useUIStore } from "@/stores/ui-store";
 import { getTodayVirtues } from "@/lib/virtue-mappings";
-import { getLocalDateKey, useExamenStore } from "@/stores/examen-store";
 
 export default function HomePage() {
   const [journalOpen, setJournalOpen] = useState(false);
+  const [virtueOpen, setVirtueOpen] = useState(false);
   const navigate = useNavigate();
 
   const { weaknesses } = useWeaknessesStore();
   const { entries } = useJournalStore();
   const { customMappings, focusId } = useVirtuesStore();
   const { settings } = useUIStore();
-  const { entries: examenEntries } = useExamenStore();
 
   const activeWeaknesses = weaknesses.filter((w) => w.status !== "archived");
   const todayVirtues = getTodayVirtues(activeWeaknesses, customMappings, focusId);
   const primaryVirtue = todayVirtues[0] || null;
   const journalCount = entries.length;
-  const examenComplete = examenEntries.some(
-    (entry) => entry.date === getLocalDateKey()
-  );
 
   return (
     <div className="app-background">
@@ -41,6 +37,7 @@ export default function HomePage() {
           virtue={primaryVirtue}
           userName={settings.name}
           onContinueReflection={() => setJournalOpen(true)}
+          onVirtueClick={() => setVirtueOpen(true)}
         />
 
         <hr className="editorial-rule my-10" />
@@ -59,24 +56,10 @@ export default function HomePage() {
             <div className="flex items-start justify-between gap-4">
               <div>
                 <p className="label-caps mb-2">Daily Examen</p>
-                <h2 className="text-editorial-3xl text-text mb-2">
-                  {examenComplete ? "Today is complete." : "Review the day."}
-                </h2>
-                <p className="text-editorial-sm text-text-secondary leading-relaxed">
-                  {examenComplete
-                    ? "Your prayerful review is saved in the calendar."
-                    : "Five quiet minutes with God, following the rhythm of St. Ignatius."}
-                </p>
+                <h2 className="text-editorial-3xl text-text">Begin today&apos;s Examen</h2>
               </div>
-              {examenComplete ? (
-                <Check size={18} className="shrink-0 text-text" />
-              ) : (
-                <ArrowRight size={18} className="shrink-0 text-text" />
-              )}
+              <ArrowRight size={18} className="shrink-0 text-text" />
             </div>
-            <p className="text-editorial-xs text-text-secondary mt-5">
-              {examenComplete ? "Open today's Examen" : "Begin today's Examen"}
-            </p>
           </Link>
 
           <motion.div
@@ -112,12 +95,12 @@ export default function HomePage() {
               </>
             ) : (
               <>
-                <p className="text-editorial-lg text-text-secondary leading-relaxed mb-4">
+                <p className="text-editorial-lg text-text-secondary leading-relaxed mb-4 text-center">
                   No reflections yet.
                 </p>
                 <button
                   onClick={() => setJournalOpen(true)}
-                  className="group flex items-center gap-2 text-editorial-sm text-text hover:text-forest transition-colors"
+                  className="group mx-auto flex items-center gap-2 text-editorial-sm text-text hover:text-forest transition-colors"
                 >
                   Write your first reflection
                   <ArrowRight
@@ -138,6 +121,46 @@ export default function HomePage() {
         title="Daily Reflection"
       >
         <JournalWizard onClose={() => setJournalOpen(false)} />
+      </Modal>
+
+      <Modal
+        isOpen={virtueOpen && primaryVirtue !== null}
+        onClose={() => setVirtueOpen(false)}
+        title={primaryVirtue?.name}
+      >
+        {primaryVirtue && (
+          <div className="space-y-6 text-left">
+            <div>
+              <p className="label-caps mb-2">About this virtue</p>
+              <p className="text-editorial-lg text-text-secondary leading-relaxed">
+                {primaryVirtue.description}
+              </p>
+            </div>
+
+            <div>
+              <p className="label-caps mb-2">Daily practice</p>
+              <p className="text-editorial-sm text-text leading-relaxed">
+                {primaryVirtue.daily_practice}
+              </p>
+            </div>
+
+            <div>
+              <p className="label-caps mb-2">Reflection question</p>
+              <p className="text-editorial-sm text-text-secondary leading-relaxed italic">
+                {primaryVirtue.reflection_question}
+              </p>
+            </div>
+
+            {primaryVirtue.mapped_from.length > 0 && (
+              <div>
+                <p className="label-caps mb-2">Cultivated from</p>
+                <p className="text-editorial-xs text-forest">
+                  {primaryVirtue.mapped_from.join(", ")}
+                </p>
+              </div>
+            )}
+          </div>
+        )}
       </Modal>
     </div>
   );

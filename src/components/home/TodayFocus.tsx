@@ -7,12 +7,14 @@ interface TodayFocusProps {
   virtue: VirtueWithMapping | null;
   userName?: string;
   onContinueReflection?: () => void;
+  onVirtueClick?: () => void;
 }
 
 export function TodayFocus({
   virtue,
   userName,
   onContinueReflection,
+  onVirtueClick,
 }: TodayFocusProps) {
   const encouragingQuote = getEncouragingQuote();
 
@@ -35,7 +37,17 @@ export function TodayFocus({
       {virtue ? (
         <div className="mb-10">
           <p className="label-caps mb-3">Today's Virtue</p>
-          <h2 className="text-editorial-5xl text-text mb-4">{virtue.name}</h2>
+          {onVirtueClick ? (
+            <button
+              type="button"
+              onClick={onVirtueClick}
+              className="text-editorial-5xl text-text mb-4 text-left hover:opacity-70 transition-opacity"
+            >
+              {virtue.name}
+            </button>
+          ) : (
+            <h2 className="text-editorial-5xl text-text mb-4">{virtue.name}</h2>
+          )}
 
           <hr className="editorial-rule my-6" />
 

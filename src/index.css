@@ -38,7 +38,7 @@
   body {
     margin: 0;
     font-family: var(--font-body);
-    background: linear-gradient(to bottom, #D4C8B8 0%, #EAF7FF 100%);
+    background: linear-gradient(to bottom, #FFFFFF 0%, #EAF7FF 100%);
     color: var(--color-text);
     line-height: 1.6;
     font-size: 16px;
@@ -103,7 +103,7 @@
 @layer components {
   .app-background {
     min-height: 100dvh;
-    background: linear-gradient(to bottom, #D4C8B8 0%, #EAF7FF 100%);
+    background: linear-gradient(to bottom, #FFFFFF 0%, #EAF7FF 100%);
   }
 
   .dark .app-background {
