@@ -56,7 +56,10 @@ export default function HomePage() {
             <div className="flex items-start justify-between gap-4">
               <div>
                 <p className="label-caps mb-2">Daily Examen</p>
-                <h2 className="text-editorial-3xl text-text">Begin today&apos;s Examen</h2>
+                <h2 className="text-editorial-3xl text-text mb-2">Begin today&apos;s Examen</h2>
+                <p className="text-editorial-sm text-text-secondary leading-relaxed">
+                  Five quiet minutes with God, following the method of St. Ignatius.
+                </p>
               </div>
               <ArrowRight size={18} className="shrink-0 text-text" />
             </div>
