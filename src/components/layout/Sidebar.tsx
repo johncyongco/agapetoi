@@ -16,7 +16,7 @@ const navItems = [
   { to: "/weaknesses", icon: Shield, label: "Weaknesses" },
   { to: "/virtues", icon: Heart, label: "Virtues" },
   { to: "/journal", icon: BookOpen, label: "Journal" },
-  { to: "/insights", icon: Eye, label: "Insights" },
+  { to: "/examen", icon: Eye, label: "Examen" },
   { to: "/profile", icon: User, label: "Profile" },
 ];
 
@@ -76,7 +76,11 @@ export function Sidebar() {
                     : "text-text-secondary hover:text-text"
                 }`}
               >
-                <Icon size={16} strokeWidth={2.2} />
+                <Icon
+                  size={16}
+                  strokeWidth={2.2}
+                  className={isActive ? "fill-current" : undefined}
+                />
                 {item.label}
               </NavLink>
             );

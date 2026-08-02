@@ -7,7 +7,7 @@ const navItems = [
   { to: "/weaknesses", icon: Shield, label: "Weaknesses" },
   { to: "/virtues", icon: Heart, label: "Virtues" },
   { to: "/journal", icon: BookOpen, label: "Journal" },
-  { to: "/insights", icon: Eye, label: "Insights" },
+  { to: "/examen", icon: Eye, label: "Examen" },
   { to: "/profile", icon: User, label: "Profile" },
 ];
 
@@ -30,7 +30,7 @@ export function BottomNav() {
                 size={22}
                 strokeWidth={2.2}
                 className={`transition-colors duration-200 ${
-                  isActive ? "text-text" : "text-text-secondary"
+                  isActive ? "text-text fill-current" : "text-text-secondary"
                 }`}
               />
               <span

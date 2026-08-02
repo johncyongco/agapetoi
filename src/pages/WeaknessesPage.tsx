@@ -31,7 +31,7 @@ export default function WeaknessesPage() {
     });
 
   return (
-    <div className="min-h-screen bg-bg">
+    <div className="app-background">
       <Header title="Weaknesses" />
 
       <main className="max-w-4xl mx-auto px-5 lg:px-8 py-10 pb-24 lg:pb-12">

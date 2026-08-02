@@ -10,7 +10,7 @@ export default function InsightsPage() {
   const insights = computeInsights(weaknesses, entries);
 
   return (
-    <div className="min-h-screen bg-bg">
+    <div className="app-background">
       <Header title="Insights" />
 
       <main className="max-w-3xl mx-auto px-5 lg:px-8 py-10 pb-24 lg:pb-12">

@@ -14,6 +14,8 @@ export function TodayFocus({
   userName,
   onContinueReflection,
 }: TodayFocusProps) {
+  const encouragingQuote = getEncouragingQuote();
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -44,8 +46,11 @@ export function TodayFocus({
         </div>
       ) : (
         <div className="mb-10">
-          <p className="text-editorial-lg text-text-secondary italic">
-            {getEncouragingQuote()}
+          <p className="text-editorial-lg text-text-secondary italic text-center mx-auto max-w-md">
+            {encouragingQuote.text}
+          </p>
+          <p className="text-editorial-xs text-text-secondary mt-2 text-center">
+            — {encouragingQuote.author}
           </p>
           <p className="text-editorial-sm text-text-secondary mt-4">
             Add weaknesses to receive daily virtue guidance.
@@ -55,12 +60,15 @@ export function TodayFocus({
 
       <hr className="editorial-rule mb-8" />
 
-      <p className="text-editorial-sm text-text-secondary italic leading-relaxed max-w-md">
-        {getEncouragingQuote()}
+      <p className="text-editorial-sm text-text-secondary italic leading-relaxed max-w-md mx-auto text-center">
+        {encouragingQuote.text}
+      </p>
+      <p className="text-editorial-xs text-text-secondary mt-2 max-w-md mx-auto text-center">
+        — {encouragingQuote.author}
       </p>
 
       {onContinueReflection && (
-        <div className="mt-8">
+        <div className="mt-8 flex justify-center">
           <button
             onClick={onContinueReflection}
             className="group flex items-center gap-2 text-editorial-sm text-text hover:text-forest transition-colors duration-200"

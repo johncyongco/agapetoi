@@ -64,6 +64,20 @@ export interface JournalVirtue {
   virtue_id: string;
 }
 
+export interface ExamenResponse {
+  step: string;
+  prompt: string;
+  response: string;
+}
+
+export interface ExamenEntry {
+  id: string;
+  date: string;
+  created_at: string;
+  responses: ExamenResponse[];
+  archived: boolean;
+}
+
 export interface VirtueWithMapping extends Virtue {
   mapped_from: string[];
 }

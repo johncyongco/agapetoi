@@ -1404,7 +1404,7 @@ export function getTodayKey(): string {
   return new Date().toISOString().split("T")[0];
 }
 
-export function getEncouragingQuote(): string {
+export function getEncouragingQuote(): { text: string; author: string } {
   const quotes = [
     '"The glory of God is man fully alive; moreover, man\'s life is the vision of God." — St. Irenaeus',
     '"God calls us all to be saints." — St. Josemaría Escrivá',
@@ -1424,7 +1424,12 @@ export function getEncouragingQuote(): string {
   const dayOfYear = Math.floor(
     (Date.now() - new Date(new Date().getFullYear(), 0, 0).getTime()) / 86400000
   );
-  return quotes[dayOfYear % quotes.length];
+  const quote = quotes[dayOfYear % quotes.length];
+  const separator = quote.lastIndexOf(" — ");
+  return {
+    text: quote.slice(0, separator),
+    author: quote.slice(separator + 3),
+  };
 }
 
 export function getWeaknessByTitle(title: string): WeaknessTemplate | undefined {

@@ -11,7 +11,7 @@ export default function ArchivePage() {
   const archived = weaknesses.filter((w) => w.status === "archived");
 
   return (
-    <div className="min-h-screen bg-bg">
+    <div className="app-background">
       <Header title="Archive" />
 
       <main className="max-w-3xl mx-auto px-5 lg:px-8 py-10 pb-24 lg:pb-12">

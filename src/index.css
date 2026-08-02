@@ -7,11 +7,11 @@
   --font-body: "Inter", system-ui, sans-serif;
   --font-stat: "Inter", system-ui, sans-serif;
 
-  --color-bg: #F7F6F3;
-  --color-paper: #FCFBF8;
+  --color-bg: #EAF7FF;
+  --color-paper: #FFFDF8;
   --color-border: #DDDDD8;
   --color-text: #1E1E1E;
-  --color-text-secondary: #757575;
+  --color-text-secondary: #78716C;
   --color-forest: #455C4B;
   --color-forest-dark: #3A4D3F;
   --color-olive: #697662;
@@ -38,7 +38,7 @@
   body {
     margin: 0;
     font-family: var(--font-body);
-    background-color: var(--color-bg);
+    background: linear-gradient(to bottom, #D4C8B8 0%, #EAF7FF 100%);
     color: var(--color-text);
     line-height: 1.6;
     font-size: 16px;
@@ -61,7 +61,7 @@
   }
 
   .dark body {
-    background-color: var(--color-bg);
+    background: var(--color-bg);
     color: var(--color-text);
   }
 
@@ -101,6 +101,15 @@
 }
 
 @layer components {
+  .app-background {
+    min-height: 100dvh;
+    background: linear-gradient(to bottom, #D4C8B8 0%, #EAF7FF 100%);
+  }
+
+  .dark .app-background {
+    background: var(--color-bg);
+  }
+
   .editorial-rule {
     border: none;
     border-top: 1px solid var(--color-border);
@@ -339,5 +348,118 @@
     line-height: 1;
     letter-spacing: -0.03em;
     font-weight: 600;
+  }
+}
+
+.candle-mode .candle-interactive-card {
+  background: #2B1C13 !important;
+  background-image: none !important;
+  border-color: #63452E !important;
+  color: #F5E7D0;
+  backdrop-filter: none;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.5);
+}
+
+.candle-mode .candle-muted-content {
+  filter: blur(7px);
+  opacity: 0.18;
+  pointer-events: none;
+  user-select: none;
+  transition: filter 250ms ease, opacity 250ms ease;
+}
+
+.candle-mode .candle-focus-content {
+  position: relative;
+  z-index: 2;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  background-image: none;
+  color: #F5E7D0;
+}
+
+.candle-mode .app-background {
+  background: #120B07 !important;
+  color: #F5E7D0;
+}
+
+.candle-mode .candle-interactive-card .bg-paper,
+.candle-mode .candle-interactive-card .bg-bg {
+  background-color: #2A1B11 !important;
+}
+
+.candle-mode .candle-focus-content .text-text {
+  color: #F5E7D0 !important;
+}
+
+.candle-mode .candle-focus-content .text-text-secondary,
+.candle-mode .candle-focus-content .label-caps {
+  color: #C7AA8C !important;
+}
+
+.candle-mode .candle-focus-content .border-border,
+.candle-mode .candle-focus-content .border-text {
+  border-color: #63452E !important;
+}
+
+.candle-mode .candle-focus-content .border-lilac-deep,
+.candle-mode .candle-focus-content .border-gold,
+.candle-mode .candle-focus-content .border-forest {
+  border-color: #8B623F !important;
+}
+
+.candle-mode .candle-focus-content .bg-text {
+  background-color: #F5E7D0 !important;
+}
+
+.candle-mode .candle-focus-content .text-bg {
+  color: #140D08 !important;
+}
+
+.candle-mode .candle-toggle {
+  background: #2B1C11 !important;
+  border-color: #8B603C !important;
+  color: #F5E7D0 !important;
+  animation: candle-glow 1.6s ease-in-out infinite;
+  box-shadow: 0 0 18px rgba(212, 151, 91, 0.16);
+}
+
+.candle-flame {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  animation: candle-flicker 1.35s ease-in-out infinite;
+}
+
+.candle-flame-active {
+  fill: currentColor;
+  filter: drop-shadow(0 0 4px rgba(245, 193, 111, 0.7));
+}
+
+@keyframes candle-flicker {
+  0%, 100% {
+    transform: rotate(-3deg) scale(0.96, 1.02);
+  }
+  35% {
+    transform: rotate(2deg) scale(1.04, 0.96);
+  }
+  68% {
+    transform: rotate(-1deg) scale(0.98, 1.05);
+  }
+}
+
+@keyframes candle-glow {
+  0%, 100% {
+    box-shadow: 0 0 14px rgba(212, 151, 91, 0.14);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(245, 193, 111, 0.3);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .candle-flame,
+  .candle-mode .candle-toggle {
+    animation: none;
   }
 }

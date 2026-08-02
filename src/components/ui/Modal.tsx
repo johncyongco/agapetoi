@@ -8,6 +8,7 @@ interface ModalProps {
   title?: string;
   children: ReactNode;
   maxWidth?: string;
+  maxHeight?: string;
 }
 
 export function Modal({
@@ -16,6 +17,7 @@ export function Modal({
   title,
   children,
   maxWidth = "max-w-lg",
+  maxHeight = "",
 }: ModalProps) {
   const overlayRef = useRef<HTMLDivElement>(null);
 
@@ -54,7 +56,7 @@ export function Modal({
         >
           <div className="absolute inset-0 bg-text/10" />
           <motion.div
-            className={`relative w-full ${maxWidth} bg-paper border border-border overflow-hidden`}
+            className={`relative w-full ${maxWidth} ${maxHeight} bg-paper border border-border overflow-hidden`}
             initial={{ opacity: 0, y: 6 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 6 }}

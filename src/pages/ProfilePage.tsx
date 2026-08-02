@@ -9,6 +9,7 @@ import {
   Sun,
   Monitor,
   Archive,
+  Eye,
 } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { ConfirmDialog } from "@/components/ui/ConfirmDialog";
@@ -254,7 +255,7 @@ export default function ProfilePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-bg">
+    <div className="app-background">
       <Header title="Profile" />
 
       <main className="max-w-2xl mx-auto px-5 lg:px-0 py-10 pb-24 lg:pb-12">
@@ -329,6 +330,13 @@ export default function ProfilePage() {
                     {archivedWeaknesses.length}
                   </span>
                 )}
+              </Link>
+              <Link
+                to="/insights"
+                className="w-full flex items-center gap-3 py-3.5 border-b border-border text-left text-editorial-sm text-text hover:bg-paper transition-colors"
+              >
+                <Eye size={14} strokeWidth={1.5} className="text-text-secondary" />
+                Insights
               </Link>
               <button
                 onClick={() => setShowClearConfirm(true)}
